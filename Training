@@ -1,0 +1,31 @@
+// Map
+let numbers = [2, 6, 9, 23]
+let squaredNumbers = numbers.map{$0 * $0}
+print(squaredNumbers)
+
+// MapValue
+let footbalsScore = ["Valensiya": 1, "Chiago": 3, "NewYork": 5]
+let newFootbalsScore = footbalsScore.mapValues {$0 + 1}
+print(newFootbalsScore)
+
+// FlattedMap
+let numbersTwo = [[1, 2, 3, 5, 8, 9], [10, 34, 50, 30, 40, 10]]
+let filteredNumbers = numbersTwo.flatMap() {$0.filter{$0 % 2 == 0}}
+print(filteredNumbers)
+
+// CompactMap
+let numbersThree = ["1", "two", "3"]
+let filteredNumbersTwo = numbersThree.compactMap() { Int($0) }
+print(filteredNumbersTwo)
+
+// zip
+let footbalsScoreTwo = [1, 3, 5]
+let footbalsScoreThree = [3, 4, 7]
+let footbalsScoreZip = zip(footbalsScoreTwo, footbalsScoreThree)
+Array(footbalsScoreZip)
+Dictionary(uniqueKeysWithValues: footbalsScoreZip)
+
+//reduce
+let banknote = [100, 500, 1000]
+let reduceBanknote = banknote.reduce(300, +)
+print(reduceBanknote)
